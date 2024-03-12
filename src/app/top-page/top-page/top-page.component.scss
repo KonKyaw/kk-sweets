@@ -1,0 +1,9 @@
+.banner {
+    height: 280px;
+    background-color: beige;
+    margin-bottom: 20px;
+
+    @media (max-width: 425px) {
+        height: 150px;
+    }
+}

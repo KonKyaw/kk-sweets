@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid gx-5 d-flex justify-content-between">
+    <div class="d-flex flex-row justify-content-between align-items-center">
+      <img class="nav-link" routerLink="/" src="favicon.ico" alt="icon-wardrobe" width="20px">
+      <a class="navbar-brand" routerLink="/">KK Sweets</a>
+      
+    </div>
+
+    <div class="d-flex align-items-center">
+      <div class="user-container-mobile d-lg-none">
+        <img class="avatar" *ngIf="auth.user?.photoURL" [src]= "auth.user?.photoURL">
+      </div>
+      
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLink="/dashboard">Dashboard</a>
+        </li>
+        <li *ngIf="!auth.user" class="nav-item d-lg-none">
+          <a class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLink="/login">Login</a>
+        </li>
+        <li *ngIf="auth.user" class="nav-item d-lg-none">
+          <a class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLink="/" (click)="logout()">Log Out</a>
+        </li>
+      </ul>
+    </div>
+    <div class="user-container d-none d-lg-flex align-items-center">
+      <a *ngIf="!auth.user" class="nav-link " data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLink="/login">Login</a>
+      <img *ngIf="auth.user?.photoURL" class="nav-link avatar" [src]= "auth.user?.photoURL">
+      <a ngbDropdown *ngIf="auth.user" class="nav-link dropdown">
+        <a *ngIf="auth.user" ngbDropdownToggle class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          {{ this.auth.user.displayName }}
+        </a>
+        <ul ngbDropdownMenu class="dropdown dropdown-menu">
+          <li>
+            <a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="logout()">Log Out</a>
+          </li>
+        </ul>
+      </a>
+    </div>
+  </div>
+</nav>

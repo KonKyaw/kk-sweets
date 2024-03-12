@@ -1,0 +1,21 @@
+{
+    "database": {
+      "rules": "database.rules.json"
+    },
+    "hosting": {
+      "site": "dev-kk-sweets",
+      "public": "dist/kk-sweets",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+  ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  }
+  

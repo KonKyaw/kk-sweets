@@ -1,0 +1,14 @@
+<div class="products">
+    <!-- search bar -->
+    <!-- <div>
+        <product-filter [category]="category"></product-filter>
+    </div> -->
+    <div class="product-card-wrapper">
+            <ng-container *ngFor="let p of filteredProducts; let i = index">
+                <a class="product-card-wrapper--container" [routerLink]="['/dashboard/products/', p.key]">
+                    <product-card [product]="p"></product-card>
+                </a>
+            </ng-container>
+    </div>
+</div>
+

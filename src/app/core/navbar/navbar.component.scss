@@ -1,0 +1,33 @@
+.navbar {
+    margin-bottom: 12px;
+}
+
+.nav-item{
+    text-align: right;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 40px;
+    margin-right: 10px;
+}
+
+.dropdown {
+    .dropdown-toggle {
+        cursor: pointer;
+    }
+
+    .dropdown-menu.show {
+        margin-top: revert;
+        transform: translateX(-5%);
+        min-width: auto;
+    }
+
+    .navbar-collapse {
+        padding-right: 1.5rem;
+    }
+}
+
+.nav-link::marker {
+    display: none;
+}

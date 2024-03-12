@@ -1,0 +1,62 @@
+$gap: 20px;
+
+.col {
+    margin-bottom: 3vw;
+    padding-left: 1.5vw;
+}
+
+.row {
+    margin-right: calc(-0.3 * var(--bs-gutter-x));
+}
+
+.product-card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gap;
+    margin-right: -$gap;
+
+    // @media screen and (max-width: 767px) {
+    //     margin-right: 0px;
+    // }
+
+    &--container {
+        text-decoration: none;
+        width: calc(16.6666667% - $gap);
+
+        @media screen and (max-width: 400px) {
+            width: calc(50% - $gap);
+        }
+
+        @media (min-width: 401px) and (max-width: 767px) {
+            width: calc(33.3333333% - $gap);
+        }
+
+        @media (min-width: 758px) and (max-width: 1200px) {
+            width: calc(20% - $gap);
+        }    
+    }
+
+}
+
+@media (max-width: 425px) {
+    :host ::ng-deep product-card {
+
+        // .card {
+        //     max-width: 350px;
+        //     height: 300px;
+        // }
+
+        .card-body {
+            padding: 8px;
+        }
+
+        .card-title {
+            font-size: 14px;
+            line-height: 16px;
+        }
+
+        .card-subtitle {
+            font-size: 12px;
+        }
+    }
+}

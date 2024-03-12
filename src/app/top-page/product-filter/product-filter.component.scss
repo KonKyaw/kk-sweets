@@ -1,0 +1,16 @@
+.sticky-top {
+    top: 65px;
+    z-index: 0;
+}
+
+.group-header {
+    text-align: center;
+    // border-color: #0d6efd;
+}
+
+@media (max-width: 767.98px) {
+    .list-group-item {
+        font-size: 10px;
+        padding: 5px;
+    }
+}
