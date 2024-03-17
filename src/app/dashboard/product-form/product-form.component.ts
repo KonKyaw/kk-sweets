@@ -9,6 +9,7 @@ import { CategoryService } from 'shared/services/category.service';
 import { DeleteImageService } from 'shared/services/delete-image.service';
 import { ProductService } from 'shared/services/product.service';
 import { UploadImageService } from 'shared/services/upload-image.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-product-form',
@@ -31,16 +32,34 @@ export class ProductFormComponent implements OnDestroy {
   // private urlPattern = /^(https?|http?|ftp):\/\/[^\s/$.?#].[^\s]*\.(jpg|jpeg|png|gif|bmp)$/;
 
   productForm = new FormGroup({
-    title: new FormControl<string>('', [
+    titleEn: new FormControl<string>('', [
       Validators.required,
       Validators.minLength(4),
       Validators.maxLength(40),
+    ]),
+    titleMm: new FormControl<string>('', [
+      Validators.minLength(4),
+      Validators.maxLength(40),
+    ]),
+    titleJa: new FormControl<string>('', [
+      Validators.minLength(4),
+      Validators.maxLength(40),
+    ]),
+    descriptionEn: new FormControl<string>('', [
+      Validators.required,
+      Validators.maxLength(500),  // adjust later
+    ]),
+    descriptionMm: new FormControl<string>('', [
+      Validators.maxLength(500),  // adjust later
+    ]),
+    descriptionJa: new FormControl<string>('', [
+      Validators.maxLength(500),  // adjust later
     ]),
     price: new FormControl<number>(0, [
       Validators.min(0),
     ]),
     category: new FormControl<string>('', [Validators.required]),
-    imageUrl: new FormControl<string>('', [
+    dataUrl: new FormControl<string>('', [
       // Validators.pattern(this.urlPattern)
     ]),
     downloadUrl: new FormControl<string>('', [
@@ -56,7 +75,8 @@ export class ProductFormComponent implements OnDestroy {
     private deleteImageService: DeleteImageService,
     private route: ActivatedRoute,
     private router: Router,
-    private datePipe: DatePipe
+    private datePipe: DatePipe,
+    public translate: TranslateService
   ) {
     this.categories$ = this.categoryService.getAll();
     this.idProduct = this.route.snapshot.paramMap.get('id');
@@ -67,10 +87,15 @@ export class ProductFormComponent implements OnDestroy {
       this.isEdit = true;
       this.editProduct$.pipe(takeUntil(this.destroyed$)).subscribe((product) => {
         this.productForm.setValue({
-          title: product.title,
+          titleEn: product.titleEn || '',
+          titleMm: product.titleMm || '',
+          titleJa: product.titleJa || '',
+          descriptionEn: product.descriptionEn || '',
+          descriptionMm: product.descriptionMm || '',
+          descriptionJa: product.descriptionJa || '',
           price: product.price || 0,
           category: product.category || '',
-          imageUrl: product.imageUrl || '',
+          dataUrl: product.dataUrl || '',
           downloadUrl: product.downloadUrl || '',
           note: product.note || '',
         });
@@ -85,8 +110,11 @@ export class ProductFormComponent implements OnDestroy {
   }
 
   //needed for ngIf etc..
-  get title() {
-    return this.productForm.get('title');
+  get titleEn() {
+    return this.productForm.get('titleEn');
+  }
+  get descriptionEn() {
+    return this.productForm.get('descriptionEn');
   }
   get price() {
     return this.productForm.get('price');
@@ -94,8 +122,8 @@ export class ProductFormComponent implements OnDestroy {
   get category() {
     return this.productForm.get('category');
   }
-  get imageUrl() {
-    return this.productForm.get('imageUrl');
+  get dataUrl() {
+    return this.productForm.get('dataUrl');
   }
 
   async onSubmit(product: any) {
@@ -161,14 +189,14 @@ export class ProductFormComponent implements OnDestroy {
           this.imgFile = resolve;
           this.downloadUrl = true;
           this.productForm.patchValue({
-            imageUrl: resolve,
+            dataUrl: resolve,
           });
         });
       };
     }
   }
 
-  resizeImage(imageURL: any): Promise<any> {
+  resizeImage(dataURL: any): Promise<any> {
     return new Promise((resolve) => {
       const image = new Image();
       image.onload = function () {
@@ -182,7 +210,7 @@ export class ProductFormComponent implements OnDestroy {
         var data = canvas.toDataURL('image/jpeg', 1);
         resolve(data);
       };
-      image.src = imageURL;
+      image.src = dataURL;
     });
   }
 

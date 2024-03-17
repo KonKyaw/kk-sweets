@@ -1,0 +1,38 @@
+{
+	"NavBar": {
+		"login": "ログアウト",
+		"logout": "ログイン"
+	},
+	"Home":{
+		"Banner": {
+			"Text": "ミャンマーの幸せの味を全ての人に"
+		},
+		"Product": {
+			"Title": "{{ product.titleJa }}",
+			"Description": "{{ product.descriptionJa }}",
+			"TaxIncluded": "(税込)"
+		}
+	},
+	"Orders": {
+		"Success":{},
+		"History":{},
+		"Details": {}
+	},
+	"Dashboard": {
+		"Products": {
+            "Title": "{{ product.titleJa }}"
+		},
+		"ProductForm": {
+			"Title": "名前",
+			"Price": "価格",
+			"Category": "カテゴリー",
+			"Description": "詳細",
+			"Image": "画像",
+			"AllergenInfo": "アレルギー物質",
+			"AdminNote": "管理者ノート"
+		},
+		"Orders": {
+			"Details": {}
+		}
+	}
+}

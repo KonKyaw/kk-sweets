@@ -1,0 +1,38 @@
+{
+	"NavBar": {
+		"login": "Login",
+		"logout": "Log Out"
+	},
+	"Home":{
+		"Banner": {
+			"Text": "လူတိုင်းအတွက် အနံ့အရသာနှင့်ပြည့်စုံသော မြန်မာ့မုန့်မျိုးစုံ"
+		},
+		"Product": {
+			"Title": "{{ product.titleMm }}",
+			"Description": "{{ product.descriptionMm }}",
+			"TaxIncluded": "(အခွန်ပါပြီး)"
+		}
+	},
+	"Orders": {
+		"Success":{},
+		"History":{},
+		"Details": {}
+	},
+	"Dashboard": {
+		"Products": {
+            "Title": "{{ product.titleMm }}"
+		},
+		"ProductForm": {
+			"Title": "မုန့်အမည်",
+			"Price": "စျေးနှုန်း",
+			"Category": "အမျိုးအစား",
+			"Description": "အချက်အလက်",
+			"Image": "ဓာတ်ပုံ",
+			"AllergenInfo": "Allergen Info",
+			"AdminNote": "Admin Note"
+		},
+		"Orders": {
+			"Details": {}
+		}
+	}
+}

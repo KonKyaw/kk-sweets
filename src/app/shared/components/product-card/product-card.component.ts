@@ -11,7 +11,7 @@ export class ProductCardComponent {
     title: '',
     price: 0,
     category: '',
-    imageUrl: '',
+    dataUrl: '',
   };
   @Input('showActions') showActions = true; // refactor showActions
   // @Input('inputBrand') inputBrand: string | null = '';

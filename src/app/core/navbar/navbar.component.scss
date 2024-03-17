@@ -1,9 +1,28 @@
 .navbar {
     margin-bottom: 12px;
+    background-color: #F9E780;
+
+    .favicon {
+        width: 20px;
+        margin-right: 4px;
+    }
 }
 
 .nav-item{
     text-align: right;
+}
+
+.language-switcher {
+    margin-right: 8px;
+
+    &-button {
+        margin-right: 4px;
+    }
+
+    .fi {
+        margin-right: 8px;
+   
+    }
 }
 
 .avatar {
@@ -18,9 +37,15 @@
     }
 
     .dropdown-menu.show {
-        margin-top: revert;
-        transform: translateX(-5%);
-        min-width: auto;
+        &.dropdown-menu-logout{
+            margin-top: revert;
+            transform: translateX(-5%);
+            min-width: auto;
+        }
+
+        &.dropdown-menu-language, &.dropdown-menu-language-mobile{
+            min-width: auto;
+        }
     }
 
     .navbar-collapse {

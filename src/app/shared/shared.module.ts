@@ -8,11 +8,12 @@ import { ProductService } from './services/product.service';
 // import { SizeService } from './services/size.service';
 import { UserService } from './services/user.service';
 import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [ProductCardComponent],
-  imports: [CommonModule, RouterModule],
-  exports: [CommonModule, ProductCardComponent],
+  imports: [CommonModule, RouterModule, TranslateModule],
+  exports: [CommonModule, TranslateModule, ProductCardComponent],
   providers: [
     AuthService,
     // BrandService,

@@ -1,0 +1,38 @@
+{
+	"NavBar": {
+		"login": "Login",
+		"logout": "Log Out"
+	},
+	"Home":{
+		"Banner": {
+			"Text": "Burmese delicacies for everyone"
+		},
+		"Product": {
+			"Title": "{{ product.titleEn }}",
+			"Description": "{{ product.descriptionEn }}",
+			"TaxIncluded": "(Tax included)"
+		}
+	},
+	"Orders": {
+		"Success":{},
+		"History":{},
+		"Details": {}
+	},
+	"Dashboard": {
+		"Products": {
+            "Title": "{{ product.titleEn }}"
+		},
+		"ProductForm": {
+			"Title": "Title",
+			"Price": "Price",
+			"Category": "Category",
+			"Description": "Description",
+			"Image": "Image",
+			"AllergenInfo": "Allergen Info",
+			"AdminNote": "Admin Note"
+		},
+		"Orders": {
+			"Details": {}
+		}
+	}
+}
