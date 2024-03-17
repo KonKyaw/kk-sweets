@@ -55,7 +55,7 @@ export class DashboardComponent implements OnDestroy, AfterViewInit {
   filter(query: string) {
     this.filteredProducts = query
       ? this.products.filter((p) =>
-          p.title.toLowerCase().includes(query.toLowerCase())
+          p.titleEn.toLowerCase().includes(query.toLowerCase())
         )
       : this.products;
     this.dataSource = new MatTableDataSource(this.filteredProducts);
