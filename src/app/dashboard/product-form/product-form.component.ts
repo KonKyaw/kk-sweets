@@ -83,7 +83,7 @@ export class ProductFormComponent implements OnDestroy {
     this.editProduct$ = productService.get(this.idProduct);
     this.isEdit = false;
     if (this.idProduct && this.idProduct != 'new') {
-      debugger;
+      // debugger;
       this.isEdit = true;
       this.editProduct$.pipe(takeUntil(this.destroyed$)).subscribe((product) => {
         this.productForm.setValue({
@@ -131,45 +131,46 @@ export class ProductFormComponent implements OnDestroy {
       new Date(),
       'yyyy-MM-dd HH:mm:ss'
     );
-
-    if (this.isEdit = true && product.downloadUrl) {
-        this.deleteImageService.deleteImage(product.downloadUrl);
-    }
-    // need delay before upload?
-
-    // need to await this before update or create
-    // todo: change metadata name
-    if (this.imageInput.files) {
-      debugger;
-      const downloadUrl = await this.uploadImage(this.imageInput);
-      product.downloadUrl = downloadUrl;
-      console.log("UrlResult", downloadUrl);
-    }
     
     if (this.idProduct && this.idProduct != 'new') {
-      product.updatedDate = currDateTime;
-      product.updatedUser = "kkTest";
-      // product.updatedUser = this.user;
+      product.updatedDate = currDateTime;    
+      product.updatedUser = this.user;
+
+      if (this.imageInput.files) {
+        if (this.isEdit = true && product.downloadUrl) {
+          this.deleteImageService.deleteImage(product.downloadUrl);
+        }
+        const downloadUrl = await this.uploadImage(this.imageInput, this.idProduct);
+        product.downloadUrl = downloadUrl;
+        console.log("UrlResult- editProduct", downloadUrl);
+      }
+
       this.editProduct$.pipe(takeUntil(this.destroyed$)).subscribe((Data) => {
         product.createdDate = Data.createdDate;
         product.createdUser = Data.createdUser;
         this.productService.update(product, this.idProduct!);
         this.router.navigate(['/dashboard']);
-        debugger;
+        // debugger;
         console.log("edited"); // double-check if still looping (solved by takeUntil)
       });
     } else {
       product.createdDate = product.updatedDate = currDateTime;
-      product.createdUser = product.updatedUser = "kkTest";
-      this.productService.create(product);
-      console.log("submitted");
+      product.createdUser = product.updatedUser = this.user;
+      const key = this.productService.create(product);
+      if (this.imageInput.files) {
+        const downloadUrl = await this.uploadImage(this.imageInput, key);
+        product.downloadUrl = downloadUrl;
+        console.log("UrlResult- newProduct", downloadUrl);
+        this.productService.update(product, key);
+      }
+      console.log("submitted", key);
       this.router.navigate(['/dashboard']);
     }
   }
 
-  uploadImage(imageInput: HTMLInputElement): Promise<any> {
+  uploadImage(imageInput: HTMLInputElement, productKey: string): Promise<any> {
    // upload to storage
-   this.downloadUrl =  this.uploadImageService.uploadImage(imageInput)
+   this.downloadUrl =  this.uploadImageService.uploadImage(imageInput, productKey);
    return new Promise((resolve) => {
       if(this.downloadUrl) {
         resolve(this.downloadUrl);

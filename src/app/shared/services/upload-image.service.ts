@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { getDownloadURL, getStorage, ref, updateMetadata, uploadBytes } from '@angular/fire/storage';
+import { getDownloadURL, getStorage, ref, uploadBytes } from '@angular/fire/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ export class UploadImageService {
   
   constructor() { }
   
-  async uploadImage(image: HTMLInputElement): Promise<string> {
+  async uploadImage(image: HTMLInputElement, productKey: string): Promise<string> {
     return new Promise<string>((resolve, reject) => {
       if (!image.files) {
         reject("No image files found");
@@ -18,7 +18,8 @@ export class UploadImageService {
 
       const file: File = image.files[0];
       // console.log("uploadImage", image.files);
-      const storageRef = ref(this.storage, 'products/images/' + file.name); //keyname?
+      // const storageRef = ref(this.storage, 'products/images/' + file.name); //keyname?
+      const storageRef = ref(this.storage, 'products/images/' + productKey);
       if (file) {
         uploadBytes(storageRef, file).then((snapshot) => {
           // console.log('Uploaded a blob or file!');
@@ -39,23 +40,4 @@ export class UploadImageService {
       }
    })
   }
-
-  // async updateFilename() {
-  //   // Create a reference to the file whose metadata we want to change
-  //   const storage = getStorage();
-  //   const storageRef = ref(storage, 'images/storage.jpg');
-
-  //   // Create file metadata to update
-  //   const newMetadata = {
-  //     name: 'updatedName'
-  //   };
-
-  //   // Update metadata properties
-  //   updateMetadata(storageRef, newMetadata)
-  //     .then((metadata) => {
-  //       // Updated metadata for 'images/forest.jpg' is returned in the Promise
-  //     }).catch((error) => {
-  //       // Uh-oh, an error occurred!
-  //     });
-  //     }
 }
