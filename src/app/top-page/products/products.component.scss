@@ -1,12 +1,7 @@
 $gap: 20px;
 
-.col {
-    margin-bottom: 3vw;
-    padding-left: 1.5vw;
-}
-
-.row {
-    margin-right: calc(-0.3 * var(--bs-gutter-x));
+.products {
+    padding-bottom: 20px;
 }
 
 .product-card-wrapper {
@@ -31,7 +26,7 @@ $gap: 20px;
             width: calc(33.3333333% - $gap);
         }
 
-        @media (min-width: 758px) and (max-width: 1200px) {
+        @media (min-width: 768px) and (max-width: 1200px) {
             width: calc(20% - $gap);
         }    
     }
@@ -52,7 +47,7 @@ $gap: 20px;
 
         .card-title {
             font-size: 14px;
-            line-height: 16px;
+            line-height: 1.75;
         }
 
         .card-subtitle {

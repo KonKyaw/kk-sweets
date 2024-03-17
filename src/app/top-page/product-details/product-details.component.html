@@ -1,0 +1,14 @@
+<div class="container d-flex">
+        <div class="image-container" >
+                <img class="img-top"
+                [src]="product.downloadUrl" alt="{{ product.titleEn }}"> 
+        </div>
+        <div class="details-container">
+                <h1 class="title" [innerHTML]="'Home.Product.Title' | translate : { product: product }"></h1>
+                <div class="price-container d-flex flex-row align-items-start">
+                        <span class="price"> {{ product.price | currency: 'JPY': "symbol" }} </span>
+                        <span class="tax" [innerHTML]="'Home.Product.TaxIncluded' | translate : { product: product }"></span>
+                </div>
+                <p class="description" [innerHTML]="'Home.Product.Description' | translate : { product: product }"></p>
+        </div>
+</div>
