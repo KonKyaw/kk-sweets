@@ -7,6 +7,7 @@ import { ProductFilterComponent } from './product-filter/product-filter.componen
 import { SharedModule } from 'shared/shared.module';
 import { TopPageComponent } from './top-page/top-page.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { BannerComponent } from './banner/banner.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     ProductsComponent,
     ProductFilterComponent,
     TopPageComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    BannerComponent
   ],
   imports: [
     CommonModule,

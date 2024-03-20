@@ -32,7 +32,6 @@
             font-size: 26px;
             font-weight: 700;
             line-height: 1.5;
-
         }
 
         .price-container {
@@ -51,7 +50,21 @@
             line-height: 1.75;
             text-align: justify;
             text-justify: inter-word;
+        }
 
+        @media screen and (max-width: 425px) {
+            .title {
+                font-size: 22px;
+            }
+
+            .price-container {
+                margin-bottom: 40px;
+            }
+
+            .description {
+                font-size: 16px;
+                line-height: 1.5;
+            }
         }
     }
 }
