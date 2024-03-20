@@ -1,4 +1,6 @@
-$gap: 20px;
+$mobile-gap: 20px;
+$tablet-gap: 30px;
+$pc-gap: 40px;
 
 .products {
     padding-bottom: 20px;
@@ -7,28 +9,34 @@ $gap: 20px;
 .product-card-wrapper {
     display: flex;
     flex-wrap: wrap;
-    gap: $gap;
-    margin-right: -$gap;
+    gap: $pc-gap;
+    margin-right: -$pc-gap;
 
-    // @media screen and (max-width: 767px) {
-    //     margin-right: 0px;
-    // }
+    @media screen and (max-width: 425px) {
+        gap: $mobile-gap;
+        margin-right: -$mobile-gap;
+    }
+
+    @media (min-width: 426px) and (max-width: 767px) {
+        gap: $tablet-gap;
+        margin-right: -$tablet-gap;
+    }
 
     &--container {
         text-decoration: none;
-        width: calc(16.6666667% - $gap);
+        width: calc(25% - $pc-gap);
 
-        @media screen and (max-width: 400px) {
-            width: calc(50% - $gap);
+        @media screen and (max-width: 425px) {
+            width: calc(50% - $mobile-gap);
         }
 
-        @media (min-width: 401px) and (max-width: 767px) {
-            width: calc(33.3333333% - $gap);
+        @media (min-width: 426px) and (max-width: 767px) {
+            width: calc(50% - $tablet-gap);
         }
 
         @media (min-width: 768px) and (max-width: 1200px) {
-            width: calc(20% - $gap);
-        }    
+            width: calc(33.3333% - $pc-gap);
+        }
     }
 
 }

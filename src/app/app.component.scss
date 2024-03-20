@@ -1,0 +1,11 @@
+.container-fluid {
+    --bs-gutter-x: 12rem;
+
+    @media screen and (max-width: 425px) {
+        --bs-gutter-x: 3rem;
+    }
+
+    @media (min-width: 426px) and (max-width: 767px) {
+        --bs-gutter-x: 6rem;
+    }
+}

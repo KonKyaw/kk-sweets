@@ -1,6 +1,20 @@
 .navbar {
     margin-bottom: 12px;
-    background-color: #F9E780;
+    background-color: #FAEEA1;
+    // background-color: #FAEB94;
+    // background-color: #F9E780;
+    
+    .container-fluid {
+        --bs-gutter-x: 12rem;
+
+        @media screen and (max-width: 425px) {
+            --bs-gutter-x: 3rem;
+        }
+
+        @media (min-width: 426px) and (max-width: 767px) {
+            --bs-gutter-x: 6rem;
+        }
+    }
 
     .favicon {
         width: 20px;
