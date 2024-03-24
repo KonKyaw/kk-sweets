@@ -4,11 +4,14 @@ import { DashboardMasterComponent } from './dashboard-master/dashboard-master.co
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardOrdersComponent } from './dashboard-orders/dashboard-orders.component';
 import { ProductFormComponent } from './product-form/product-form.component';
+import { authGuard } from 'shared/services/auth-guard/auth-guard.component';
+import { adminAuthGuard } from 'shared/services/auth-guard/admin-auth-guard';
 
 const routes: Routes = [
   {
     path: '',
     component: DashboardMasterComponent,
+    canActivate: [authGuard, adminAuthGuard],
     children: [
       {
         path: 'products',
@@ -17,7 +20,6 @@ const routes: Routes = [
             path: ':id',
             title: 'Edit product',
             component: ProductFormComponent,
-            // canActivate: [authGuard, adminAuthGuard],
           },
           {
             path: 'new',
