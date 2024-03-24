@@ -4,11 +4,20 @@
                 [src]="product.downloadUrl" alt="{{ product.titleEn }}"> 
         </div>
         <div class="details-container">
-                <h1 class="title" [innerHTML]="'Home.Product.Title' | translate : { product: product }"></h1>
-                <div class="price-container d-flex flex-row align-items-start">
+                <h1 class="title" [innerHTML]="'Home.ProductDetails.Title' | translate : { product: product }"></h1>
+                <div class="price-container">
                         <span class="price"> {{ product.price | currency: 'JPY': "symbol" }} </span>
-                        <span class="tax" [innerHTML]="'Home.Product.TaxIncluded' | translate : { product: product }"></span>
+                        <span class="tax" [innerHTML]="'Home.ProductDetails.TaxIncluded' | translate : { product: product }"></span>
                 </div>
-                <p class="description" [innerHTML]="'Home.Product.Description' | translate : { product: product }"></p>
+                <p class="description" [innerHTML]="'Home.ProductDetails.Description' | translate : { product: product }"></p>
+                <div *ngIf="product.allergenInfo" class="allergen-info-container">
+                        <span class="allergen-info-header" [innerHTML]="'Home.ProductDetails.AllergenInfo' | translate"></span>
+                        <div class="allergen-info-icon-wrapper">
+                                <div class="allergen-info-icon-wrapper-container" *ngFor="let icon of product.allergenInfo">
+                                        <img class="allergen-info-icon" [src]="allergenIconPath+icon+'.svg'">
+                                        <span class="allergen-info-text" [innerHTML]="'Allergen.'+icon | translate"></span>
+                                </div>
+                        </div>
+                </div>
         </div>
 </div>

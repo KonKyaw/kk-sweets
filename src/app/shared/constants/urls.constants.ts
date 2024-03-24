@@ -2,8 +2,14 @@ export const IMAGE_PATH = '/assets/images';
 export const ICON_PATH = '/assets/icons';
 
 export const IMAGE_URLS = {
-    PASTERY_CHEF: IMAGE_PATH + '/pastry-chef-animate.svg'
+    PASTRY_CHEF: IMAGE_PATH + '/pastry-chef-animate.svg'
 };
+
+export const ALLERGEN_ICON_PATH = ICON_PATH + '/allergen';
+// export const ALLERGEN_ICON_URLS = {
+//     WHEAT: ALLERGEN_ICON_PATH + '/wheat.svg',
+//     EGG: ALLERGEN_ICON_PATH + '/egg.svg'
+// };
 
 const SOCIAL_ICON_PATH = ICON_PATH + '/social' 
 export const SOCIAL_ICON_URLS = {

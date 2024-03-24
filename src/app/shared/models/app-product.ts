@@ -1,3 +1,5 @@
+import { MainAllergensEnum } from "shared/constants";
+
 export interface AppProduct {
     key?: string,
     titleEn: string,
@@ -8,6 +10,7 @@ export interface AppProduct {
     descriptionJa: string,
     price?: number,
     category: string,
+    allergenInfo?: MainAllergensEnum[]; // | SubAllergensEnum[]
     dataUrl?: string,
     downloadUrl?: string,
     note?: string,

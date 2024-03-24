@@ -7,10 +7,11 @@
 		"Banner": {
 			"Text": "Burmese delicacies for everyone"
 		},
-		"Product": {
+		"ProductDetails": {
 			"Title": "{{ product.titleEn }}",
 			"Description": "{{ product.descriptionEn }}",
-			"TaxIncluded": "(Tax included)"
+			"TaxIncluded": "(Tax included)",
+			"AllergenInfo": "Allergen Information"
 		}
 	},
 	"Orders": {
@@ -34,5 +35,20 @@
 		"Orders": {
 			"Details": {}
 		}
+	},
+	"Allergen": {
+		"egg": "egg",
+		"milk": "milk",
+		"wheat": "wheat",
+		"shrimp": "shrimp",
+		"crab": "crab",
+		"peanut": "peanut",
+		"buckwheat": "buckwheat",
+		"walnut": "walnut",
+		"cashew nut": "cashew nut",
+		"sesame": "sesame",
+		"soybean": "soybean",
+		"banana": "banana",
+		"gelatin": "gelatin"
 	}
 }

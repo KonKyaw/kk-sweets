@@ -7,10 +7,11 @@
 		"Banner": {
 			"Text": "လူတိုင်းအတွက် အနံ့အရသာနှင့်ပြည့်စုံသော မြန်မာ့မုန့်မျိုးစုံ"
 		},
-		"Product": {
+		"ProductDetails": {
 			"Title": "{{ product.titleMm }}",
 			"Description": "{{ product.descriptionMm }}",
-			"TaxIncluded": "(အခွန်ပါပြီး)"
+			"TaxIncluded": "(အခွန်ပါပြီး)",
+			"AllergenInfo": "ဓာတ်မတည့်ခြင်းဖြစ်စေနိုင်သော ပါဝင်ပစ္စည်းများ"
 		}
 	},
 	"Orders": {
@@ -34,5 +35,20 @@
 		"Orders": {
 			"Details": {}
 		}
+	},
+	"Allergen": {
+		"egg": "ကြက်ဥ",
+		"milk": "နွားနို့",
+		"wheat": "wheat",
+		"shrimp": "ပုဇွန်",
+		"crab": "ကဏန်း",
+		"peanut": "မြေပဲ",
+		"buckwheat": "ပန်းဂျုံ",
+		"walnut": "သစ်ကြားသီး",
+		"cashew nut": "သီဟိုဠ်စေ့",
+		"sesame": "နှမ်'",
+		"soybean": "ပဲပိစပ်",
+		"banana": "ငှက်ပျောသီး",
+		"gelatin": "ဂျယ်လတင်"
 	}
 }

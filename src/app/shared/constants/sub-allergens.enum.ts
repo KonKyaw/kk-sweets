@@ -1,0 +1,23 @@
+export enum SubAllergensEnum {
+    WALNUT = "walnut",
+    ALMOND = "almond",
+    ABALONE = "abalone",
+    SQUID = "squid",
+    SALMON_ROE = "salmon roe",
+    ORANGE = "orange",
+    CASHEW_NUT = "cashew nut",
+    KIWI = "kiwi",
+    BEEF = "beef",
+    SESAME = "sesame",
+    SALMON = "salmon",
+    MACKEREL = "mackerel",
+    SOYBEAN = "soybean",
+    CHICKEN = "chicken",
+    BANANA = "banana",
+    PORK = "pork",
+    MATSUTAKE_MUSHROOM = "matsutake mushroom",
+    PEACH = "peach",
+    WILD_YAM = "wild yam",
+    APPLE = "apple",
+    GELATIN = "gelatin"
+}

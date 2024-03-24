@@ -1,6 +1,5 @@
 .banner {
     position: relative;
-    background-color: beige;
     margin-top: -12px;
     margin-bottom: 40px;
     text-align: center;
@@ -13,7 +12,7 @@
         margin-bottom: 20px;
     }
 
-    @media (min-width: 425px) and (max-width: 767px) {
+    @media (min-width: 426px) and (max-width: 768px) {
         margin-left: - 3rem;
         margin-right: - 3rem;
     }

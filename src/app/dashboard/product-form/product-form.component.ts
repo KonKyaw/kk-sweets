@@ -10,6 +10,9 @@ import { DeleteImageService } from 'shared/services/delete-image.service';
 import { ProductService } from 'shared/services/product.service';
 import { UploadImageService } from 'shared/services/upload-image.service';
 import { TranslateService } from '@ngx-translate/core';
+import { IProductCategory } from 'shared/models/product-category.model';
+import { MainAllergensEnum } from 'shared/constants';
+import { SubAllergensEnum } from 'shared/constants';
 
 @Component({
   selector: 'app-product-form',
@@ -19,13 +22,15 @@ import { TranslateService } from '@ngx-translate/core';
 
 export class ProductFormComponent implements OnDestroy {
   brands$: Observable<any> = new Observable();
-  categories$: Observable<any> = new Observable();
+  productCategories$: Observable<IProductCategory[]> = new Observable();
   sizes$: Observable<any> = new Observable();
   editProduct$: Observable<any> = new Observable();
   private idProduct: string | null = '';
   public isEdit: boolean = false;
-  public downloadUrl: any = null;
-  private user: any;
+  public downloadUrl: any = null; //to-do: refactor type
+  public readonly mainAllergensEnum = MainAllergensEnum;
+  public readonly subAllergensEnum = SubAllergensEnum;
+  private userName = '';
   private readonly destroyed$ = new Subject<void>();
   imgFile: any;
   imageInput = document.createElement('div') as HTMLInputElement;
@@ -59,6 +64,7 @@ export class ProductFormComponent implements OnDestroy {
       Validators.min(0),
     ]),
     category: new FormControl<string>('', [Validators.required]),
+    allergenInfo: new FormControl<MainAllergensEnum[] | SubAllergensEnum[]>([], []),
     dataUrl: new FormControl<string>('', [
       // Validators.pattern(this.urlPattern)
     ]),
@@ -78,7 +84,7 @@ export class ProductFormComponent implements OnDestroy {
     private datePipe: DatePipe,
     public translate: TranslateService
   ) {
-    this.categories$ = this.categoryService.getAll();
+    this.productCategories$ = this.categoryService.getAll();
     this.idProduct = this.route.snapshot.paramMap.get('id');
     this.editProduct$ = productService.get(this.idProduct);
     this.isEdit = false;
@@ -95,6 +101,7 @@ export class ProductFormComponent implements OnDestroy {
           descriptionJa: product.descriptionJa || '',
           price: product.price || 0,
           category: product.category || '',
+          allergenInfo: product.allergenInfo || [],
           dataUrl: product.dataUrl || '',
           downloadUrl: product.downloadUrl || '',
           note: product.note || '',
@@ -103,8 +110,8 @@ export class ProductFormComponent implements OnDestroy {
     }
 
     auth.authState$.pipe(takeUntil(this.destroyed$)).subscribe((user: User | null) => {
-      if (user) {
-        this.user = user.displayName;
+      if (user?.displayName) {
+        this.userName = user.displayName;
       }
     });
   }
@@ -133,8 +140,8 @@ export class ProductFormComponent implements OnDestroy {
     );
     
     if (this.idProduct && this.idProduct != 'new') {
-      product.updatedDate = currDateTime;    
-      product.updatedUser = this.user;
+      product.updatedDate = currDateTime;
+      product.updatedUser = this.userName;
 
       if (this.imageInput.files) {
         if (this.isEdit = true && product.downloadUrl) {
@@ -155,7 +162,7 @@ export class ProductFormComponent implements OnDestroy {
       });
     } else {
       product.createdDate = product.updatedDate = currDateTime;
-      product.createdUser = product.updatedUser = this.user;
+      product.createdUser = product.updatedUser = this.userName;
       const key = this.productService.create(product);
       if (this.imageInput.files) {
         const downloadUrl = await this.uploadImage(this.imageInput, key);

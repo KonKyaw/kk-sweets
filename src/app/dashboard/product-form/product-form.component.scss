@@ -4,6 +4,19 @@
 
 .form-group {
     margin-bottom: 12px;
+
+    --mdc-filled-text-field-container-color: var(--bs-body-bg);
+    
+    // .mat-mdc-text-field-wrapper {
+    //     background-color: var(--bs-body-bg) !important;
+    //     background-clip: padding-box;
+    //     border: var(--bs-border-width) solid var(--bs-border-color);
+    //     border-radius: var(--bs-border-radius);
+    // }
+
+    .mat-mdc-form-field {
+        width: 100%;
+    }
 }
 
 label {
@@ -31,11 +44,3 @@ label {
 .req {
     color: red;
 }
-
-/* *:required {
-    background-color: pink;
-} */
-
-/* option[value=""][disabled] {
-    display: none;
-  } */

@@ -7,10 +7,11 @@
 		"Banner": {
 			"Text": "ミャンマーの幸せの味を全ての人に"
 		},
-		"Product": {
+		"ProductDetails": {
 			"Title": "{{ product.titleJa }}",
 			"Description": "{{ product.descriptionJa }}",
-			"TaxIncluded": "(税込)"
+			"TaxIncluded": "(税込)",
+			"AllergenInfo": "アレルギー物質"
 		}
 	},
 	"Orders": {
@@ -34,5 +35,20 @@
 		"Orders": {
 			"Details": {}
 		}
+	},
+	"Allergen": {
+		"egg": "卵",
+		"milk": "牛乳",
+		"wheat": "小麦",
+		"shrimp": "えび",
+		"crab": "かに",
+		"peanut": "落花生",
+		"buckwheat": "そば",
+		"walnut": "くるみ",
+		"cashew nut": "カッシューナッツ",
+		"sesame": "ごま",
+		"soybean": "大豆",
+		"banana": "バナナ",
+		"gelatin": "ゼラチン"
 	}
 }

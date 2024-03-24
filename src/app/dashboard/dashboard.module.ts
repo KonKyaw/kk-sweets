@@ -8,6 +8,8 @@ import { ProductFormComponent } from './product-form/product-form.component';
 import { DashboardOrdersComponent } from './dashboard-orders/dashboard-orders.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
@@ -33,7 +35,9 @@ import { DashboardMasterComponent } from './dashboard-master/dashboard-master.co
     MatIconModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatSelectModule,
+    MatFormFieldModule
   ]
 })
 export class DashboardModule { }
