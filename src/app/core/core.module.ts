@@ -4,19 +4,24 @@ import { CommonModule } from '@angular/common';
 import { CoreRoutingModule } from './core-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
+import { FooterComponent } from './footer/footer.component';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
   declarations: [
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
-    CoreRoutingModule
+    CoreRoutingModule,
+    MatIconModule
   ],
   exports: [
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
   ]
 })
 export class CoreModule { }

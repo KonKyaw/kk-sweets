@@ -18,6 +18,7 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from 'shared/shared.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './core/footer/footer.component';
 // import { ProductsComponent } from './products/products.component';
 // import { ProductFilterComponent } from './products/product-filter/product-filter.component';
 
@@ -56,6 +57,6 @@ export function HttpLoaderFactory(http: HttpClient) {
   })
   ],
   providers: [{ provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, FooterComponent]
 })
 export class AppModule { }

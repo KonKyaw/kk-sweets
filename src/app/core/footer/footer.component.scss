@@ -1,0 +1,74 @@
+.container-fluid {
+    --bs-gutter-x: 12rem;
+
+    @media screen and (max-width: 425px) {
+        --bs-gutter-x: 3rem;
+    }
+
+    @media (min-width: 426px) and (max-width: 768px) {
+        --bs-gutter-x: 6rem;
+    }
+}
+
+.footer {
+    display: block;
+    font-style: italic;
+    padding: 10px;
+    text-align: center;
+    background-color: #FAEEA1;
+
+    .contact {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+
+        @media (min-width: 426px) and (max-width: 768px) {
+            width: 85%;
+        }
+
+        @media screen and (min-width: 769px) {
+            width: 60%;
+        }
+
+        .company {
+            .icon-container {
+                display: flex;
+                gap: 4px;
+
+                .company-link{
+                    display: flex;
+                    align-items: center;
+                    color: unset;
+
+                .icon {
+                    width: 24px;
+                    }
+                }
+            }
+        }
+        
+        .retail {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            @media screen and (max-width: 425px) {
+                margin-right: -0.75rem;
+            }
+
+            &-link{
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                color: unset;
+                gap: 4px;
+            }
+        }
+    }
+
+    .no-decoration {
+        text-decoration: none;
+        color: unset;
+    }
+}
