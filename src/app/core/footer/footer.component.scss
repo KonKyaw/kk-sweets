@@ -40,10 +40,6 @@
                     display: flex;
                     align-items: center;
                     color: unset;
-
-                .icon {
-                    width: 24px;
-                    }
                 }
             }
         }
@@ -64,6 +60,10 @@
                 color: unset;
                 gap: 4px;
             }
+        }
+
+        .icon {
+            width: 24px;
         }
     }
 

@@ -1,9 +1,9 @@
 <footer class="footer">
     <div class="contact container-fluid">
       <div class="company">
-        <span>Connect with us</span>
+        <span [innerHTML]="'Home.Footer.Contact' | translate"></span>
         <div class="icon-container">
-          <a class="company-link" href="https://www.facebook.com/lionmartasiafoods">
+          <a class="company-link" href="https://www.facebook.com/profile.php?id=100095500394573">
             <mat-icon class="icon">facebook</mat-icon>
           </a>
           <a class="company-link" href="https://www.instagram.com/kkypinsights">
@@ -12,15 +12,15 @@
         </div>
       </div>
       <div class="retail">
-        <span>For retail, visit</span>
+        <span [innerHTML]="'Home.Footer.Retail' | translate"></span>  <!--to-do: add jp version-->
         <a class="retail-link" href="https://www.facebook.com/lionmartasiafoods">
           Lion Mart
-          <mat-icon>facebook</mat-icon>
+            <img class="icon" [src]="lionMart">
         </a>
       </div>
     </div>
     
-    <div>
+    <div style="color: gray; font-size: smaller;">
       Stock images by <a class="no-decoration" href="https://www.freepik.com/free-vector/flat-design-food-allergy-set_28343827.htm#&position=5&from_view=collections&uuid=e23cc7e3-06c2-4988-876b-39f2a465cbbc">Freepik</a>
     </div>
     <a style="text-decoration: none; color: black;"

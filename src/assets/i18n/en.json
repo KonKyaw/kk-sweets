@@ -12,6 +12,10 @@
 			"Description": "{{ product.descriptionEn }}",
 			"TaxIncluded": "(Tax included)",
 			"AllergenInfo": "Allergen Information"
+		},
+		"Footer": {
+			"Contact": "Connect with us",
+			"Retail": "For retail, visit"
 		}
 	},
 	"Orders": {

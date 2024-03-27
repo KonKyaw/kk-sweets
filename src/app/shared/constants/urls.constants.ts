@@ -13,5 +13,6 @@ export const ALLERGEN_ICON_PATH = ICON_PATH + '/allergen';
 
 const SOCIAL_ICON_PATH = ICON_PATH + '/social' 
 export const SOCIAL_ICON_URLS = {
-    INSTAGRAM: SOCIAL_ICON_PATH + '/instagram.svg'
+    INSTAGRAM: SOCIAL_ICON_PATH + '/instagram.svg',
+    LION_MART: SOCIAL_ICON_PATH + '/lion-mart.svg'
 };

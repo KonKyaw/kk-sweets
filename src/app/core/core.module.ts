@@ -6,6 +6,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
 import { MatIconModule } from '@angular/material/icon';
+import { SharedModule } from 'shared/shared.module';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { MatIconModule } from '@angular/material/icon';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     CoreRoutingModule,
     MatIconModule
   ],

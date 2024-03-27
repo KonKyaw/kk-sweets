@@ -12,6 +12,10 @@
 			"Description": "{{ product.descriptionMm }}",
 			"TaxIncluded": "(အခွန်ပါပြီး)",
 			"AllergenInfo": "ဓာတ်မတည့်ခြင်းဖြစ်စေနိုင်သော ပါဝင်ပစ္စည်းများ"
+		},
+		"Footer": {
+			"Contact": "ဆက်သွယ်ရန်",
+			"Retail": "လက်လီဝယ်ယူရန်"
 		}
 	},
 	"Orders": {

@@ -8,4 +8,5 @@ import { SOCIAL_ICON_URLS } from 'shared/constants/urls.constants';
 })
 export class FooterComponent {
   instagram = SOCIAL_ICON_URLS.INSTAGRAM;
+  lionMart = SOCIAL_ICON_URLS.LION_MART;
 }
