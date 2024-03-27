@@ -32,6 +32,7 @@ export class ProductFormComponent implements OnDestroy {
   public readonly subAllergensEnum = SubAllergensEnum;
   private userName = '';
   private readonly destroyed$ = new Subject<void>();
+  private countProducts = 0;
   imgFile: any;
   imageInput = document.createElement('div') as HTMLInputElement;
   // private urlPattern = /^(https?|http?|ftp):\/\/[^\s/$.?#].[^\s]*\.(jpg|jpeg|png|gif|bmp)$/;
@@ -52,13 +53,13 @@ export class ProductFormComponent implements OnDestroy {
     ]),
     descriptionEn: new FormControl<string>('', [
       Validators.required,
-      Validators.maxLength(500),  // adjust later
+      Validators.maxLength(1500),
     ]),
     descriptionMm: new FormControl<string>('', [
-      Validators.maxLength(500),  // adjust later
+      Validators.maxLength(1500),
     ]),
     descriptionJa: new FormControl<string>('', [
-      Validators.maxLength(500),  // adjust later
+      Validators.maxLength(1500),
     ]),
     price: new FormControl<number>(0, [
       Validators.min(0),
@@ -71,6 +72,7 @@ export class ProductFormComponent implements OnDestroy {
     downloadUrl: new FormControl<string>('', [
     ]),
     note: new FormControl<string>('', []),
+    order: new FormControl<number>(0, [])
   });
 
   constructor(
@@ -105,8 +107,16 @@ export class ProductFormComponent implements OnDestroy {
           dataUrl: product.dataUrl || '',
           downloadUrl: product.downloadUrl || '',
           note: product.note || '',
+          order: product.order || 999
         });
       });
+    } else {
+      productService.getAll().subscribe(products => {
+        this.countProducts = products.length; //to-do: refactor as productService method (1 time read, without streaming obeservable)
+        this.productForm.patchValue({
+          order: this.countProducts + 1
+        });
+      })
     }
 
     auth.authState$.pipe(takeUntil(this.destroyed$)).subscribe((user: User | null) => {

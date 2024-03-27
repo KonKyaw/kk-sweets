@@ -2,6 +2,7 @@ import { MainAllergensEnum } from "shared/constants";
 
 export interface AppProduct {
     key?: string,
+    order: number,
     titleEn: string,
     titleMm: string,
     titleJa: string,

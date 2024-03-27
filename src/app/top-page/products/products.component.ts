@@ -12,13 +12,12 @@ export class ProductsComponent {
   products: Array<AppProduct> = [];
   filteredProducts: any[] = []; //cannot use interface cos doesn't have key
   // products$: Observable<any> = new Observable
-  productsService: any;
   category: string | null = '';
 
   constructor(route: ActivatedRoute, productService: ProductService) {
-    productService.getAll().subscribe((products: Array<any>) => {
+    productService.getAll().subscribe((products: Array<AppProduct>) => {
       this.products = products;
-      // this.products$ = productService.getAll();
+      // this.products$ = productService.getAll(); //to-do: add until destroyed
 
       //needs refactoring with switchMap
       //Dealing with Multiple Asynchronous Operations
@@ -34,6 +33,7 @@ export class ProductsComponent {
               (p) => p.category.toLowerCase() === this.category
             )
           : this.products;
+        this.filteredProducts = this.filteredProducts.sort(((a:AppProduct,b:AppProduct) => a.order - b.order));
       });
     });
   }

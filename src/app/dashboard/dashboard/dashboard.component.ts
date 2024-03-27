@@ -19,13 +19,14 @@ export class DashboardComponent implements OnDestroy, AfterViewInit {
   subscription: Subscription = new Subscription();
 
   displayedColumns: string[] = [
+    'order',
     'title',
     // 'brand',
     // 'size',
     'price',
     'category',
-    'note',
     'edit',
+    'note',
     'updatedUser',
     'updatedDate',
     'createdUser',
@@ -44,7 +45,7 @@ export class DashboardComponent implements OnDestroy, AfterViewInit {
   ) {
     this.subscription = this.productService
       .getAll()
-      .subscribe((products: Array<any>) => {
+      .subscribe((products: Array<AppProduct>) => {
         this.filteredProducts = this.products = products;
         this.dataSource = new MatTableDataSource(this.filteredProducts);
         this.dataSource.sort = this.sort; // Initialize sorting after data is loaded.);
@@ -58,6 +59,7 @@ export class DashboardComponent implements OnDestroy, AfterViewInit {
           p.titleEn.toLowerCase().includes(query.toLowerCase())
         )
       : this.products;
+    this.filteredProducts = this.filteredProducts.sort(((a:AppProduct,b:AppProduct) => b.order - a.order));
     this.dataSource = new MatTableDataSource(this.filteredProducts);
   }
 

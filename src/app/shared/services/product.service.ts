@@ -31,7 +31,7 @@ export class ProductService {
     return remove(refId)
   }
 
-  getAll() {
+  getAll(): Observable<AppProduct[]> {
     const quRef = query(ref(this.database, 'products')) // , orderByChild('name'));
 
     return listVal(quRef, {keyField: "key"});
