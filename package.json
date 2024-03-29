@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:deploy:dev": "ng build --configuration=development && firebase deploy --project=dev",
+    "build:deploy:prod": "ng build && firebase deploy --project=prod"
   },
   "private": true,
   "dependencies": {
@@ -36,6 +38,7 @@
     "@angular/cli": "~16.1.4",
     "@angular/compiler-cli": "^16.1.0",
     "@angular/localize": "^16.1.0",
+    "@types/gtag.js": "^0.0.19",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",

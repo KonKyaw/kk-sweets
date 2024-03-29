@@ -1,7 +1,24 @@
 {
   "projects": {
-    "dev": "dev-kk-sweets"
+    "dev": "dev-kk-sweets",
+    "prod": "kk-sweets",
+    "default": "kk-sweets"
   },
-  "targets": {},
+  "targets": {
+    "kk-sweets": {
+      "hosting": {
+        "prod": [
+          "kk-sweets"
+        ]
+      }
+    },
+    "dev-kk-sweets": {
+      "hosting": {
+        "prod": [
+          "dev-kk-sweets"
+        ]
+      }
+    }
+  },
   "etags": {}
 }

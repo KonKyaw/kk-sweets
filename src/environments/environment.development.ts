@@ -9,5 +9,6 @@ export const environment = {
         appId: "1:999075509115:web:a7f9081092ea480646c3de",
         measurementId: "G-PCPDYZ3MGQ",
         databaseURL: "https://dev-kk-sweets-default-rtdb.firebaseio.com",
-    }
+    },
+    gtagId: 'G-QR61WZY48R'
 };
