@@ -23,17 +23,19 @@ const routes: Routes = [
           },
           {
             path: 'new',
-            title: 'Create new product',
+            title: 'Create new product', // not going to this route. change title later?
             component: ProductFormComponent
           }
         ]
       },
       {
         path: 'orders',
+        title: 'Orders',
         component: DashboardOrdersComponent
       },
       {
         path: '',
+        title: 'Dashboard',
         component: DashboardComponent
       }
     ]
