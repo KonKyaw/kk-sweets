@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 import { TopPageRoutingModule } from './top-page-routing.module';
 import { ProductsComponent } from './products/products.component';
@@ -8,7 +8,6 @@ import { SharedModule } from 'shared/shared.module';
 import { TopPageComponent } from './top-page/top-page.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { BannerComponent } from './banner/banner.component';
-
 
 @NgModule({
   declarations: [
@@ -21,7 +20,8 @@ import { BannerComponent } from './banner/banner.component';
   imports: [
     CommonModule,
     SharedModule,
-    TopPageRoutingModule
+    TopPageRoutingModule,
+    NgOptimizedImage
   ]
 })
 export class TopPageModule { }

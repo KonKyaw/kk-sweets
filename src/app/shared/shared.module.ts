@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule, DatePipe } from '@angular/common';
+import { CommonModule, DatePipe, NgOptimizedImage } from '@angular/common';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { AuthService } from './services/auth-guard/auth.service';
 // import { BrandService } from './services/brand.service';
@@ -12,7 +12,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [ProductCardComponent],
-  imports: [CommonModule, RouterModule, TranslateModule],
+  imports: [CommonModule, RouterModule, TranslateModule, NgOptimizedImage],
   exports: [CommonModule, TranslateModule, ProductCardComponent],
   providers: [
     AuthService,
@@ -23,7 +23,7 @@ import { TranslateModule } from '@ngx-translate/core';
     // SizeService,
     // DeleteImageService,
     // UploadImageService,
-    UserService,
-  ],
+    UserService
+  ]
 })
 export class SharedModule {}

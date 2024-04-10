@@ -1,5 +1,7 @@
 .banner {
     position: relative;
+    width: auto;
+    height: auto;
     margin-top: -12px;
     margin-bottom: 40px;
     text-align: center;
@@ -19,11 +21,13 @@
 
     img {
         width: 100%;
+        height: auto;
     }
 
     .animation {
         position: absolute;
         max-width: 28%;
+        height: auto;
         top: 50%;
         left: 10%;
         transform: translateY(-50%);

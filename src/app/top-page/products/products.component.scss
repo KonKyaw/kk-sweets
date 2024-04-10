@@ -44,6 +44,10 @@ $pc-gap: 40px;
 @media (max-width: 425px) {
     :host ::ng-deep product-card {
 
+        display: block;
+        width: 100%;
+        height: auto;
+
         // .card {
         //     max-width: 350px;
         //     height: 300px;

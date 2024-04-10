@@ -1,5 +1,6 @@
 .card {
     height: 100%;
+    width: auto;
     border-radius: 20px;
     box-shadow: 0 20px 20px rgba(0, 0, 0, 0.19);
 
@@ -16,12 +17,18 @@
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
     width: 100%;
+    height: auto;
+    min-height: 158.66px;
     object-fit: cover;
     overflow: hidden;
+
+    @media (max-width: 425px) {
+        min-height: 140.5px;
+    }
     
     .card-img-top {
-        // width: auto;
-        // height: auto;
+        width: 100%;
+        height: auto;
         transition: transform 0.3s ease-out;
     }  
 }
