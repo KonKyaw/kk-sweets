@@ -67,6 +67,20 @@
         }
     }
 
+    .attribute {
+        color: gray;
+        font-size: smaller;
+
+        .text {
+            vertical-align: middle;
+        }
+        
+        .icon {
+            width: 24px;
+            margin-left: 4px;
+        }
+    }
+
     .no-decoration {
         text-decoration: none;
         color: unset;
