@@ -5,7 +5,7 @@
         </div>
         <div class="details-container">
                 <h1 class="title" [innerHTML]="'Home.ProductDetails.Title' | translate : { product: product }"></h1>
-                <div class="price-container">
+                <div *ngIf="product.price != 0" class="price-container">
                         <span class="price"> {{ product.price | currency: 'JPY': "symbol" }} </span>
                         <span class="tax" [innerHTML]="'Home.ProductDetails.TaxIncluded' | translate : { product: product }"></span>
                 </div>

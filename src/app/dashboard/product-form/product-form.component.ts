@@ -11,8 +11,7 @@ import { ProductService } from 'shared/services/product.service';
 import { UploadImageService } from 'shared/services/upload-image.service';
 import { TranslateService } from '@ngx-translate/core';
 import { IProductCategory } from 'shared/models/product-category.model';
-import { MainAllergensEnum } from 'shared/constants';
-import { SubAllergensEnum } from 'shared/constants';
+import { MainAllergensEnum, SubAllergensEnum } from 'shared/constants';
 
 @Component({
   selector: 'app-product-form',
@@ -41,28 +40,28 @@ export class ProductFormComponent implements OnDestroy {
     titleEn: new FormControl<string>('', [
       Validators.required,
       Validators.minLength(4),
-      Validators.maxLength(40),
+      Validators.maxLength(100)
     ]),
     titleMm: new FormControl<string>('', [
-      Validators.minLength(4),
-      Validators.maxLength(40),
+      Validators.minLength(4), // to-do: add error for html
+      Validators.maxLength(100)
     ]),
     titleJa: new FormControl<string>('', [
       Validators.minLength(4),
-      Validators.maxLength(40),
+      Validators.maxLength(100)
     ]),
     descriptionEn: new FormControl<string>('', [
       Validators.required,
-      Validators.maxLength(1500),
+      Validators.maxLength(1500)
     ]),
     descriptionMm: new FormControl<string>('', [
-      Validators.maxLength(1500),
+      Validators.maxLength(1500)
     ]),
     descriptionJa: new FormControl<string>('', [
-      Validators.maxLength(1500),
+      Validators.maxLength(1500)
     ]),
     price: new FormControl<number>(0, [
-      Validators.min(0),
+      Validators.min(0)
     ]),
     category: new FormControl<string>('', [Validators.required]),
     allergenInfo: new FormControl<MainAllergensEnum[] | SubAllergensEnum[]>([], []),
@@ -148,7 +147,7 @@ export class ProductFormComponent implements OnDestroy {
       new Date(),
       'yyyy-MM-dd HH:mm:ss'
     );
-    
+
     if (this.idProduct && this.idProduct != 'new') {
       product.updatedDate = currDateTime;
       product.updatedUser = this.userName;
@@ -186,14 +185,13 @@ export class ProductFormComponent implements OnDestroy {
   }
 
   uploadImage(imageInput: HTMLInputElement, productKey: string): Promise<any> {
-   // upload to storage
-   this.downloadUrl =  this.uploadImageService.uploadImage(imageInput, productKey);
-   return new Promise((resolve) => {
+    // upload to storage
+    this.downloadUrl =  this.uploadImageService.uploadImage(imageInput, productKey);
+    return new Promise((resolve) => {
       if(this.downloadUrl) {
         resolve(this.downloadUrl);
       }
     });
-   
   }
 
   onImageChange(imageInput: HTMLInputElement) {

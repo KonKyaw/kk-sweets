@@ -35,6 +35,12 @@
 
 .card-title {
     margin-bottom: 8px;
+    overflow: hidden;
+    $lines: 3;
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -moz-line-clamp: $lines;
+    -webkit-box-orient: vertical;
 }
 
 .card-text {

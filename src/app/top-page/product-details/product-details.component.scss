@@ -33,7 +33,6 @@
             display: flex;
             flex-direction: row;
             align-items: flex-start;
-            margin-bottom: 60px;
 
             .price{
                 margin-right: 10px;
@@ -47,8 +46,7 @@
             font-size: 20px;
             line-height: 1.75;
             text-align: justify;
-            text-justify: inter-word;
-            margin-bottom: 60px;
+            margin: 60px 0;
         }
 
         .allergen-info-container {
@@ -63,7 +61,7 @@
                 margin-bottom: 20px;
 
                 @media screen and (max-width: 425px) {
-                    font-size: 14px;
+                    font-size: 12px;
                     margin-bottom: 16px;
                 }
             }
@@ -115,13 +113,9 @@
                 font-size: 22px;
             }
 
-            .price-container {
-                margin-bottom: 40px;
-            }
-
             .description {
                 font-size: 14px;
-                line-height: 1.5;
+                margin-top: 40px;
             }
         }
     }
