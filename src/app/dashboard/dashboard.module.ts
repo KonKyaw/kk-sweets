@@ -16,6 +16,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { DashboardMasterComponent } from './dashboard-master/dashboard-master.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { DashboardMasterComponent } from './dashboard-master/dashboard-master.co
     DashboardRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    MatSlideToggleModule,
     MatTooltipModule,
     MatIconModule,
     MatTableModule,
