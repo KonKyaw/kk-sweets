@@ -184,6 +184,7 @@
             !productForm.valid">Save</button> <!-- || ( brand?.value === 'Add new brand' && !inputBrand.valid ) || ( size?.value === 'Others' && !inputSize.valid)  -->
             <button *ngIf="isEdit" class="btn btn-danger btn-bottom" type="button"
             (click)="delete()">Delete</button>
+            <mat-slide-toggle formControlName="isActive">Active</mat-slide-toggle>
         </form>
     </div>
     <div class="col-md-6">

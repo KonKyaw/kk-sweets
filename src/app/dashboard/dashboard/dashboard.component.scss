@@ -11,6 +11,10 @@ th {
   
   .table-wrapper {
     overflow: auto;
+
+    .inactive {
+      color: grey;
+    }
   }
   
   .mat-column-title {

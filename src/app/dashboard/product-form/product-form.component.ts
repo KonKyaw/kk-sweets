@@ -71,7 +71,8 @@ export class ProductFormComponent implements OnDestroy {
     downloadUrl: new FormControl<string>('', [
     ]),
     note: new FormControl<string>('', []),
-    order: new FormControl<number>(0, [])
+    order: new FormControl<number>(0, []),
+    isActive: new FormControl<boolean>(true, [])
   });
 
   constructor(
@@ -106,7 +107,8 @@ export class ProductFormComponent implements OnDestroy {
           dataUrl: product.dataUrl || '',
           downloadUrl: product.downloadUrl || '',
           note: product.note || '',
-          order: product.order || 999
+          order: product.order || 999,
+          isActive: product.isActive || false
         });
       });
     } else {
