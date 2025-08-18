@@ -34,7 +34,6 @@
 
     .fi {
         margin-right: 8px;
-   
     }
 }
 
@@ -50,6 +49,8 @@
     }
 
     .dropdown-menu.show {
+        cursor: pointer;
+
         &.dropdown-menu-logout{
             margin-top: revert;
             transform: translateX(-5%);

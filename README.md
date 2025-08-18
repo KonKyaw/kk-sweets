@@ -1,6 +1,6 @@
 # KkSweets
 
-TLDR: Building up from the previous WardrobeInventory, I have created a functional website! Feel free to look around and tell me what you think!<br> 
+TLDR: Building up from the previous WardrobeInventory, I have created a functional website for my traditional desserts! Feel free to look around and tell me what you think!<br> 
 [KKSweets Website](https://kk-sweets.firebaseapp.com/)
 
 ##### Table of Contents  
@@ -13,7 +13,7 @@ TLDR: Building up from the previous WardrobeInventory, I have created a function
 # Description
 
 **What is this?**: A webapp where the shop owner (me) can display a catalog of Myanmar Traditional Desserts, where the potential customers can learn about them: the price, description in different languages and ingredients (allergens). Hopefully, it will be useful and convenient for shop owners, and create an interesting and pleasant experience for visitors.<br>
-_Version: 1.0_
+_Version: 2.0_
 
 ##  Technical Features:
 - **Angular Typescript frontend**
@@ -31,16 +31,18 @@ _Version: 1.0_
 - **Catalog Page (Home page)**: A catalog view with filter on each category.
     - Bootstrap Navbar with user details such as name and avatar
     - Custom favicon and logos
+    - Paginator for limiting number of products shown at once
     - Product card view which also leads to Details/ Edit page
     - Language Switcher: I have added the feature to add multi-language descriptions and view them accordingly.
 - **Dashboard Page (Admin only)**: A dashboard view that shows all the items and information. Intended for admin user only.
-    - Keyword search filter
+    - Keyword search filter respective to active language
     - Angular Material Table with pagination, sorting
-    - Future plans: order management, dashboard visualizations to understand inventory stats at a glance
+    - active product toggle for hiding temporary unwanted products
+    - Future plans: general settings, order management, dashboard visualizations to understand inventory stats at a glance
 - **Product Details/ Edit Page**:
     - Reactive Form that applies a flexible mixture of select and input elements for data input
+    - Image uploading to _Storage_ and text data stored on _Realtime Database_
     - Validations and Errors to guide users and format input data
-    - Image upload from image URL or direct image upload
     - Product Card preview which is also used in Catalog page
       
 ## Final Remarks
@@ -65,6 +67,7 @@ Run `ng build` to build the project. Add `--configuration production` for produc
 ## Deploy
 
 Run `firebase deploy -P prod` to deploy the build to a firebase project with an alias named `prod`.
+I have added a custom script to automate both build and deploy with `npm run build:deploy:dev`
 
 ## Running unit tests
 

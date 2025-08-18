@@ -18,9 +18,11 @@
     border-top-right-radius: inherit;
     width: 100%;
     height: auto;
+    aspect-ratio: 1 / 1;
     min-height: 158.66px;
     object-fit: cover;
     overflow: hidden;
+    position: relative;
 
     @media (max-width: 425px) {
         min-height: 140.5px;
@@ -38,6 +40,7 @@
     overflow: hidden;
     $lines: 3;
     display: -webkit-box;
+    line-clamp: $lines;
     -webkit-line-clamp: $lines;
     -moz-line-clamp: $lines;
     -webkit-box-orient: vertical;

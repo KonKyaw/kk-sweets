@@ -1,15 +1,21 @@
 <div class="products">
     <!-- search bar -->
-    <!-- <div>
+    <div>
         <product-filter [category]="category"></product-filter>
-    </div> -->
+    </div>
     <div class="product-card-wrapper">
-            <ng-container *ngFor="let p of filteredProducts; let i = index">
+            <ng-container *ngFor="let p of dataSource.connect() | async">
                 <!-- <a class="product-card-wrapper--container" [routerLink]="['/dashboard/products/', p.key]"> -->
                 <a class="product-card-wrapper--container" [routerLink]="['/products/', p.key]">
                     <product-card [product]="p"></product-card>
                 </a>
             </ng-container>
     </div>
+    <mat-paginator class="paginator"
+        [pageSize]="12"
+        [pageSizeOptions]="[12, 24, 50]"
+        showFirstLastButtons
+        aria-label="Select page of products">
+  </mat-paginator>
 </div>
 

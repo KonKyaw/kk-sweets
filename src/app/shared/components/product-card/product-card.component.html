@@ -1,9 +1,11 @@
 <div *ngIf="product.titleEn" class="card">
     <div class="card-img-top-container overflow-hidden w-100">
         <img *ngIf="!showActions && product.dataUrl" class="card-img-top"
-        [src]="product.dataUrl" alt="{{ product.titleEn }}">
+        [ngSrc]="product.dataUrl" fill
+        alt="{{ product.titleEn }}">
         <img *ngIf="showActions && product.downloadUrl" class="card-img-top"
-        [src]="product.downloadUrl" alt="{{ product.titleEn }}" onerror="this.style.visibility = 'hidden'"> 
+        [ngSrc]="product.downloadUrl" fill
+        alt="{{ product.titleEn }}" onerror="this.style.visibility = 'hidden'"> 
     </div>
     <div class="card-body d-flex flex-column">
         <h3 class="card-title" [innerHTML]="'Dashboard.Products.Title' | translate : { product: product }"></h3>

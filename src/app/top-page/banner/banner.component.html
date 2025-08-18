@@ -1,4 +1,12 @@
 <div class="banner">
-    <img class="banner-image" src="{{bannerPc}}">
-    <img class="banner-image-mobile" src="{{bannerMobile}}">
+    <img 
+        class="banner-image"
+        [ngSrc]="bannerPc"
+        priority width="1440" height="450"
+    >
+    <img
+        class="banner-image-mobile"
+        [ngSrc]="bannerMobile"
+        priority width="375" height="150"
+    >
 </div>

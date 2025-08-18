@@ -19,4 +19,5 @@ export interface AppProduct {
     updatedDate?: Date,
     createdUser?: string,
     updatedUser?: string,
+    isActive?: boolean
 }
