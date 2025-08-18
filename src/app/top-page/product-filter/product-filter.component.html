@@ -1,36 +1,39 @@
 <div class="product-filter">
-    <div ngbDropdown class="nav-link dropdown language-switcher">
+    <div ngbDropdown class="dropdown" container="body" placement="bottom-start">
         <button
             ngbDropdownToggle
             id="productCategory"
             class="btn btn-outline-secondary dropdown-toggle"
+            [ngClass]="{ 'active': category }"
             data-bs-toggle="dropdown"
             aria-expanded="false">
-            {{ category ? category : 'Select Category' }}
+            {{ category ? category : 'Category' }}
         </button>
-        <div>
-            <ul ngbDropdownMenu="productCategory" class="dropdown dropdown-menu dropdown-menu-category">
-                <li>
-                    <a
-                        routerLink="/"
-                        [queryParams]=""
-                        class="dropdown-item"
-                        [class.active]=""
-                    >
-                        All
-                    </a>
-                </li>
-                <li *ngFor="let c of categories$ | async">
-                    <a
-                        routerLink="/"
-                        [queryParams]="{ category: c.key }"
-                        class="dropdown-item"
-                        [class.active]="category === c.key"
-                    >
-                        {{ c.name }}
-                    </a>
-                </li>
-            </ul>
-        </div> 
+        <ul
+            ngbDropdownMenu
+            aria-labelledby="productCategory"
+            class="dropdown-menu dropdown-menu-category"
+        >
+            <li>
+                <a
+                    routerLink="/"
+                    [queryParams]=""
+                    class="dropdown-item"
+                    [class.active]="!category"
+                >
+                    All
+                </a>
+            </li>
+            <li *ngFor="let c of categories$ | async">
+                <a
+                    routerLink="/"
+                    [queryParams]="{ category: c.key }"
+                    class="dropdown-item"
+                    [class.active]="category === c.key"
+                >
+                    {{ c.name }}
+                </a>
+            </li>
+        </ul>
     </div>
 </div>

@@ -3,7 +3,6 @@
     <div class="d-flex flex-row justify-content-between align-items-center">
       <img class="nav-link favicon" routerLink="/" src="favicon.ico" alt="icon-wardrobe" >
       <a class="navbar-brand" routerLink="/">KK Sweets</a>
-      
     </div>
 
     <div class="d-flex align-items-center">
@@ -44,7 +43,10 @@
               </div>
             </div>
             <div class="d-flex justify-content-end">
-              <ul ngbDropdownMenu="language" class="dropdown dropdown-menu  dropdown-menu-language-mobile">
+              <ul ngbDropdownMenu
+                aria-labelledby="language"
+                class="dropdown-menu dropdown-menu-language-mobile"
+              >
                 <li (click)="useLanguage(supportedLanguagesEnum.MM)">
                   <span class="dropdown-item "><i class="fi fi-mm"></i>မြန်မာစာ</span>
                 </li>
@@ -84,7 +86,10 @@
           </div>
         </div>
       <div>
-        <ul ngbDropdownMenu="language" class="dropdown dropdown-menu dropdown-menu-language">
+        <ul ngbDropdownMenu
+          aria-labelledby="language"
+          class="dropdown-menu dropdown-menu-language"
+        >
           <li (click)="useLanguage(supportedLanguagesEnum.MM)">
             <span class="dropdown-item"><i class="fi fi-mm"></i>မြန်မာစာ</span>
           </li>

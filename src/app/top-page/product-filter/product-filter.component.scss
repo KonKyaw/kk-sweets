@@ -1,9 +1,17 @@
 .product-filter {
-    display: flex;
-    justify-content: flex-end;
     margin-bottom: 40px;
+    position: relative;
 
     @media screen and (max-width: 425px) {
         margin-bottom: 20px;
+    }
+
+    .dropdown {
+        position: relative;
+
+        .dropdown-menu {
+            -webkit-transform: translate3d(0, 38px, 0) !important;
+            transform: translate3d(0, 38px, 0) !important;
+        }
     }
 }
