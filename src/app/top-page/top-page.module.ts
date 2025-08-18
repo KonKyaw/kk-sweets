@@ -8,6 +8,7 @@ import { SharedModule } from 'shared/shared.module';
 import { TopPageComponent } from './top-page/top-page.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { BannerComponent } from './banner/banner.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BannerComponent } from './banner/banner.component';
     CommonModule,
     SharedModule,
     TopPageRoutingModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    MatPaginatorModule
   ]
 })
 export class TopPageModule { }

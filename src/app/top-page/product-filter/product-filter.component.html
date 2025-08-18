@@ -1,19 +1,39 @@
-<div class="sticky-top">
-    <div class="list-group">
-        <a
-            class="list-group-item list-group-item-action group-header"
-            [class.active]="!category"
-            routerLink="/">
-            All Categories
-        </a>
-        <a 
-            *ngFor="let c of categories$ | async"
-            routerLink="/"
-            [queryParams]="{ category: c.key }"
-            class="list-group-item list-group-item-action"
-            [class.active]="category === c.key"
+<div class="product-filter">
+    <div ngbDropdown class="dropdown" container="body" placement="bottom-start">
+        <button
+            ngbDropdownToggle
+            id="productCategory"
+            class="btn btn-outline-secondary dropdown-toggle"
+            [ngClass]="{ 'active': category }"
+            data-bs-toggle="dropdown"
+            aria-expanded="false">
+            {{ category ? category : 'Category' }}
+        </button>
+        <ul
+            ngbDropdownMenu
+            aria-labelledby="productCategory"
+            class="dropdown-menu dropdown-menu-category"
         >
-            {{ c.name }}
-        </a>
+            <li>
+                <a
+                    routerLink="/"
+                    [queryParams]=""
+                    class="dropdown-item"
+                    [class.active]="!category"
+                >
+                    All
+                </a>
+            </li>
+            <li *ngFor="let c of categories$ | async">
+                <a
+                    routerLink="/"
+                    [queryParams]="{ category: c.key }"
+                    class="dropdown-item"
+                    [class.active]="category === c.key"
+                >
+                    {{ c.name }}
+                </a>
+            </li>
+        </ul>
     </div>
 </div>

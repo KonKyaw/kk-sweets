@@ -3,7 +3,6 @@
     <div class="d-flex flex-row justify-content-between align-items-center">
       <img class="nav-link favicon" routerLink="/" src="favicon.ico" alt="icon-wardrobe" >
       <a class="navbar-brand" routerLink="/">KK Sweets</a>
-      
     </div>
 
     <div class="d-flex align-items-center">
@@ -44,7 +43,10 @@
               </div>
             </div>
             <div class="d-flex justify-content-end">
-              <ul ngbDropdownMenu="language" class="dropdown dropdown-menu  dropdown-menu-language-mobile">
+              <ul ngbDropdownMenu
+                aria-labelledby="language"
+                class="dropdown-menu dropdown-menu-language-mobile"
+              >
                 <li (click)="useLanguage(supportedLanguagesEnum.MM)">
                   <span class="dropdown-item "><i class="fi fi-mm"></i>မြန်မာစာ</span>
                 </li>
@@ -66,33 +68,36 @@
 
     <div class="user-container d-none d-lg-flex align-items-center">
       <div ngbDropdown class="nav-link dropdown language-switcher">
-      <div ngbDropdownToggle id="language" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">  
-        <div
-          *ngIf="isActive(supportedLanguagesEnum.EN)"
-          class="language-switcher-button fi fi-gb"
-          [class.active]="isActive(supportedLanguagesEnum.EN)">
+        <div ngbDropdownToggle id="language" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">  
+          <div
+            *ngIf="isActive(supportedLanguagesEnum.EN)"
+            class="language-switcher-button fi fi-gb"
+            [class.active]="isActive(supportedLanguagesEnum.EN)">
+          </div>
+          <div
+            *ngIf="isActive(supportedLanguagesEnum.MM)"
+            class="language-switcher-button fi fi-mm"
+            [class.active]="isActive(supportedLanguagesEnum.MM)">
+          </div>
+          <div
+            *ngIf="isActive(supportedLanguagesEnum.JA)"
+            class="language-switcher-button fi fi-jp"
+            [class.active]="isActive(supportedLanguagesEnum.JA)">
+          </div>
         </div>
-        <div
-          *ngIf="isActive(supportedLanguagesEnum.MM)"
-          class="language-switcher-button fi fi-mm"
-          [class.active]="isActive(supportedLanguagesEnum.MM)">
-        </div>
-        <div
-          *ngIf="isActive(supportedLanguagesEnum.JA)"
-          class="language-switcher-button fi fi-jp"
-          [class.active]="isActive(supportedLanguagesEnum.JA)">
-        </div>
-      </div>
       <div>
-        <ul ngbDropdownMenu="language" class="dropdown dropdown-menu dropdown-menu-language">
+        <ul ngbDropdownMenu
+          aria-labelledby="language"
+          class="dropdown-menu dropdown-menu-language"
+        >
           <li (click)="useLanguage(supportedLanguagesEnum.MM)">
-            <span class="dropdown-item "><i class="fi fi-mm"></i>မြန်မာစာ</span>
+            <span class="dropdown-item"><i class="fi fi-mm"></i>မြန်မာစာ</span>
           </li>
           <li (click)="useLanguage(supportedLanguagesEnum.EN)">
-            <span class="dropdown-item "><i class="fi fi-gb"></i>English</span>
+            <span class="dropdown-item"><i class="fi fi-gb"></i>English</span>
           </li>
           <li (click)="useLanguage(supportedLanguagesEnum.JA)">
-            <span class="dropdown-item "><i class="fi fi-jp"></i>日本語</span>
+            <span class="dropdown-item"><i class="fi fi-jp"></i>日本語</span>
           </li>
         </ul>
       </div>   

@@ -1,5 +1,8 @@
+// If you just want ready-to-use compiled Bootstrap CSS:
 @import "~bootstrap/dist/css/bootstrap.css";
+
 /* Importing Bootstrap SCSS file. */
+// If you want to customize Bootstrap with SCSS variables, keep:
 @import 'bootstrap/scss/bootstrap';
 
 html, body { height: 100%; }

@@ -19,6 +19,7 @@ import { SharedModule } from 'shared/shared.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './core/footer/footer.component';
+import { NgOptimizedImage } from '@angular/common';
 // import { ProductsComponent } from './products/products.component';
 // import { ProductFilterComponent } from './products/product-filter/product-filter.component';
 
@@ -45,6 +46,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
     NgbModule,
+    NgOptimizedImage,
     BrowserAnimationsModule,
     HttpClientModule,
     TranslateModule.forRoot({
